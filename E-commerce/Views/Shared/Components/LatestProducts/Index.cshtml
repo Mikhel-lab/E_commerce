@@ -1,0 +1,20 @@
+﻿@foreach (var product in Model)
+{
+	E_commerce.Models.Product productInfo = (E_commerce.Models.Product)product;
+	E_commerce.Models.Photo photo = productInfo.Photos.SingleOrDefault(ph => ph.Status && ph.Featured);
+	var photoName = photo == null ? "b2.jpg" : photo.Name;
+
+
+	<div class="thumbnail">
+		<img src="~/products/@photoName"  />
+		<div class="caption">
+			<h5>@productInfo.Name</h5>
+			<h4 style="text-align:center"><a class="btn" asp-controller="product" asp-action="details" asp-route-id="@product.Id"> <i class="icon-zoom-in"></i></a> <a class="btn" asp-controller="cart" asp-action="buy" asp-route-id="@product.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$@productInfo.Price</a></h4>
+		</div>
+	</div>
+	<br />
+}
+
+
+
+

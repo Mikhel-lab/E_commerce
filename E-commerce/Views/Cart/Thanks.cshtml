@@ -1,0 +1,18 @@
+﻿@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@using E_commerce.Models;
+
+<ul class="breadcrumb">
+	<li><a asp-controller="home" asp-action="index">Home</a><span class="divider">/</span></li>
+	<li class="active">Thanks</li>
+</ul>
+
+<h3> Thanks for buying products</h3>
+
+
+
+
+<a asp-controller="home" asp-action="index" class="btn btn-large pull-right"><i class="icon-arrow-left"></i>Continue Shopping</a>
